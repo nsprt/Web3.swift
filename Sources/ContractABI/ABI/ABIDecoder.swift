@@ -93,9 +93,9 @@ class ABIDecoder {
             let components = outputs[i].components
             if let staticPart = hexString.substr(i * 64, Int(type.staticPartLength) * 2) {
                 var dynamicOffset: String.Index?
-                if type.isDynamic, let offset = Int(staticPart, radix: 16) {
-                    dynamicOffset = hexString.index(hexString.startIndex, offsetBy: offset * 2)
-                }
+//                if type.isDynamic, let offset = Int(staticPart, radix: 16) {
+//                    dynamicOffset = hexString.index(hexString.startIndex, offsetBy: offset * 2)
+//                }
                 return Segment(type: type, name: name, components: components, dynamicOffset: dynamicOffset, staticString: staticPart)
             }
             return nil
